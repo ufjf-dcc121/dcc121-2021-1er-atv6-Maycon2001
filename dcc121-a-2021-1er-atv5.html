@@ -495,21 +495,27 @@
             let targt=event.target;
             if(targt.classList.contains('parede'))
             {
-                console.log('parede');
+              targt.classList.add('td');
+                targt.classList.remove('parede');
+             console.log("vazio");
                 
             }
             else if(targt.classList.contains('orcs')){
+                targt.classList.add('tesouro');
+                targt.classList.remove('orcs');
                 
-                console.log('orcs');
+                console.log('tesouro');
 
             }
             else if(targt.classList.contains("tesouro")){
-                
-                console.log('tesouro');
+                 targt.classList.add('parede');
+                targt.classList.remove('tesouro');
+                console.log('parede');
             }
             else {
-                
-                console.log('vazio');
+                targt.classList.add('orcs');
+                targt.classList.remove('td');
+                console.log('orcs');
 
             }
             
