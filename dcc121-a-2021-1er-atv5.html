@@ -475,10 +475,16 @@
     </table>
     <script>
         
-        const celula= document.querySelectorAll("td") ;
-        for(let c=0;c<celulas.length-1;c++){
-           const element =celula[c];
-           element.classList.add("parede");
+        const celulas= document.querySelectorAll("td") ;
+       for(let c=0;c<celulas.length-1;c++){
+            const element =celulas[c];
+           if(element.classList.contains("orcs","tesouro")){
+           } 
+           else 
+           {
+            element.classList.add("parede");
+           element.classList.remove("td");
+           }   
         }
         
     </script>
