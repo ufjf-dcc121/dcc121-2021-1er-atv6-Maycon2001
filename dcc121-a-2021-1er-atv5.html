@@ -33,7 +33,7 @@
     <h1>Os roguelike</h1>
     <table>
         <tr>
-            <td class="parede">B</td>
+            <td class="parede"></td>
             <td class="parede"></td>
             <td class="parede"></td>
             <td class="parede"></td>
@@ -475,16 +475,45 @@
     </table>
     <script>
         
-        const celulas= document.querySelectorAll("td") ;
+        const celulas= document.querySelectorAll('td') ;
+        
        for(let c=0;c<celulas.length-1;c++){
             const element =celulas[c];
-           if(element.classList.contains("orcs","tesouro")){
+           if(element.classList.contains('tesouro')||element.classList.contains('orcs')){
            } 
            else 
            {
-            element.classList.add("parede");
-           element.classList.remove("td");
+            element.classList.add('parede');
+           element.classList.remove('td');
            }   
+        }
+        let eTD =document.querySelector('table');
+        eTD.addEventListener('click', callback, true);
+        
+        function callback(event){
+            console.log("Click");
+            let targt=event.target;
+            if(targt.classList.contains('parede'))
+            {
+                console.log('parede');
+                
+            }
+            else if(targt.classList.contains('orcs')){
+                
+                console.log('orcs');
+
+            }
+            else if(targt.classList.contains("tesouro")){
+                
+                console.log('tesouro');
+            }
+            else {
+                
+                console.log('vazio');
+
+            }
+            
+            
         }
         
     </script>
