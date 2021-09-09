@@ -477,18 +477,18 @@
         
         const celulas= document.querySelectorAll('td') ;
         
-       for(let c=0;c<celulas.length-1;c++){
-            const element =celulas[c];
+       for(let c=0;c<celulas.length;c++){
+           const element =celulas[c];
+           element.addEventListener('click', callback, true);
            if(element.classList.contains('tesouro')||element.classList.contains('orcs')){
            } 
            else 
            {
             element.classList.add('parede');
-           element.classList.remove('td');
-           }   
+            //element.classList.remove('td');
+             }   
         }
-        let eTD =document.querySelector('table');
-        eTD.addEventListener('click', callback, true);
+        //let eTD =document.querySelector('table');
         
         function callback(event){
             console.log("Click");
